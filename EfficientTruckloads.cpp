@@ -1,5 +1,7 @@
 #include "EfficientTruckloads.h"
 
+std::map<std::pair<int, int>, int> EfficientTruckloads::reqTrucks;
+
 int EfficientTruckloads::calcTrucks(int numCrates, int loadSize) {
   if (numCrates <= loadSize) return 1;
 
