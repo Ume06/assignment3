@@ -10,11 +10,14 @@ int Reverser::reverseDigit(int input) {
   int lastDigit = input % 10;
   int next = input / 10;
   int power = log10(input);
-  
+
   return lastDigit * pow(10, power) + reverseDigit(next);
 }
 
 std::string Reverser::reverseString(std::string input) {
   if (input.length() < 1) return "ERROR";
-  return "a";
+  if (input.length() == 1) return input;
+  char last = input.back();
+  input.pop_back();
+  return last + reverseString(input);
 }
